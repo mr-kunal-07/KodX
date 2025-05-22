@@ -68,14 +68,14 @@ const Home = () => {
                     <img src="./wp-cta.webp" className="h-12 md:h-14 rounded-xl cursor-pointer shadow-lg" alt="WhatsApp CTA" />
                     <img src="./insta-cta.webp" className="h-12 md:h-14 rounded-xl cursor-pointer shadow-lg" alt="Instagram CTA" />
                 </div>
-                <div className='mt-10 w-full h-10'>
+                <div className='mt-10 w-full h-10 md:hidden'>
                     <Button
-                        style={{ backgroundColor: 'black', textTransform: 'none' }}
+                        style={{ backgroundColor: 'black', textTransform: 'none',  }}
                         variant="contained"
                         fullWidth
                         data-aos="fade-up"
                         data-aos-delay="700"
-                        className="hover:bg-gray-800 md:hidden h-10 transition-colors"
+                        className="hover:bg-gray-800 h-10 transition-colors"
                     >
                         Get Free Consultation
                     </Button>
