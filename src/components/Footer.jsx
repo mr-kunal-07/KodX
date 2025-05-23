@@ -14,8 +14,23 @@ const Footer = () => {
                         If you also want to make an APP for your startup then book free consultancy today and let's start your startup together.
                     </p>
                     <div className="flex flex-wrap gap-4">
-                        <img src="./wp-cta.webp" className="h-12 md:h-13 rounded-xl cursor-pointer shadow-lg" alt="WhatsApp CTA" />
-                        <img src="./insta-cta.webp" className="h-12 border-white border-[1.2px] md:h-13 rounded-xl cursor-pointer shadow-lg" alt="Instagram CTA" />
+                    <a
+                            href="https://wa.me/919920655685?text=I%20want%20to%20know%20more%20about%20your%20service"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img src="./wp-cta.webp" className="h-12 md:h-13 rounded-xl cursor-pointer shadow-lg" alt="WhatsApp CTA" />
+                        </a>
+
+                        <a
+                            href="https://www.instagram.com/kodx.site"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img src="./insta-cta.webp" className="h-12 border-white border-[1.2px] md:h-13 rounded-xl cursor-pointer shadow-lg" alt="Instagram CTA" />
+                        </a>
+                        
+                       
                     </div>
                 </div>
 

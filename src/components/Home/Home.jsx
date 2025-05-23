@@ -2,7 +2,10 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './Home.css';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
+import About from '../About';
+import AboutHome from './AboutHome';
 
 const Home = () => {
     useEffect(() => {
@@ -10,7 +13,7 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="relative flex flex-col justify-center mb-20 pb-20 w-full items-center bg-gradient-to-b from-[#FFF4EB] to-white overflow-hidden select-none px-4">
+        <div className="relative flex flex-col justify-center w-full items-center bg-gradient-to-b from-[#FFF4EB] to-white overflow-hidden select-none px-4">
             {/* Decorative Floating PNGs */}
             <img
                 src="/arrow.webp"
@@ -65,12 +68,27 @@ const Home = () => {
                     data-aos="fade-up"
                     data-aos-delay="600"
                 >
-                    <img src="./wp-cta.webp" className="h-12 md:h-14 rounded-xl cursor-pointer shadow-lg" alt="WhatsApp CTA" />
-                    <img src="./insta-cta.webp" className="h-12 md:h-14 rounded-xl cursor-pointer shadow-lg" alt="Instagram CTA" />
+                    <a
+                        href="https://wa.me/919920655685?text=I%20want%20to%20know%20more%20about%20your%20service
+"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src="./wp-cta.webp" className="h-12 md:h-14 rounded-xl cursor-pointer shadow-lg" alt="WhatsApp CTA" />
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/kodx.site"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src="./insta-cta.webp" className="h-12 md:h-14 rounded-xl cursor-pointer shadow-lg" alt="Instagram CTA" />
+                    </a>
+
                 </div>
                 <div className='mt-10 w-full h-10 md:hidden'>
                     <Button
-                        style={{ backgroundColor: 'black', textTransform: 'none',  }}
+                        style={{ backgroundColor: 'black', textTransform: 'none', }}
                         variant="contained"
                         fullWidth
                         data-aos="fade-up"
@@ -81,6 +99,7 @@ const Home = () => {
                     </Button>
                 </div>
             </div>
+<AboutHome/>
         </div>
     );
 };

@@ -75,11 +75,137 @@ const Navbar = () => {
 
                     {/* Services Dropdown */}
                     <li className="relative" ref={servicesDropdownRef}>
-                        <div
+                        <Link to="/services" onClick={() => handleMobileItemClick('/contact')} className="hover:text-gray-600 block">
+                            Services
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link to="/contact" className="hover:text-gray-600 transition-colors">Contact</Link>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://wa.me/919920655685?text=I%20want%20to%20know%20more%20about%20your%20service
+"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Button
+                                style={{ backgroundColor: 'black', textTransform: 'none' }}
+                                variant="contained"
+                                className="hover:bg-gray-800 transition-colors"
+
+                            >
+                                Get a Free Consultation
+                            </Button>
+                        </a>
+
+                    </li>
+                </ul>
+
+                {/* Hamburger for Mobile */}
+                <div
+                    className="md:hidden text-3xl cursor-pointer hamburger-icon"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        setMenuOpen(!menuOpen);
+                    }}
+                >
+                    ☰
+                </div>
+
+                {/* Mobile Nav */}
+                {menuOpen && (
+                    <div
+                        className="absolute top-full left-0 w-full bg-white shadow-md md:hidden py-4 px-6"
+                        ref={mobileMenuRef}
+                    >
+                        <ul className="flex flex-col gap-5 text-lg poppins-semibold">
+                            <li>
+                                <Link to="/" onClick={() => handleMobileItemClick('/')} className="hover:text-gray-600 block">
+                                    Home
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/about" onClick={() => handleMobileItemClick('/about')} className="hover:text-gray-600 block">
+                                    About
+                                </Link>
+                            </li>
+
+                            {/* Mobile Services Dropdown */}
+                            <li>
+                                <Link to="/services" onClick={() => handleMobileItemClick('/contact')} className="hover:text-gray-600 block">
+                                    Services
+                                </Link>
+                            </li>
+
+
+                            <li>
+                                <Link to="/contact" onClick={() => handleMobileItemClick('/contact')} className="hover:text-gray-600 block">
+                                    Contact
+                                </Link>
+                            </li>
+                            <li>
+
+                                <a
+
+                                    href="https://wa.me/919920655685?text=I%20want%20to%20know%20more%20about%20your%20service
+"
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                    <Button
+                                        style={{ backgroundColor: 'black', textTransform: 'none' }}
+                                        variant="contained"
+                                        fullWidth
+                                        className="hover:bg-gray-800 transition-colors mt-2"
+
+                                    >
+                                        Free Consultation
+                                    </Button>
+                                </a>
+
+                            </li>
+                        </ul>
+                    </div>
+                )}
+            </div>
+        </nav>
+    );
+};
+
+export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <div
                             className="flex items-center gap-1 hover:text-gray-600 transition-colors services-toggle cursor-pointer select-none"
                             onClick={toggleServices}
-                        >
-                            Services <span>{servicesOpen ? <FaAngleUp /> : <FaAngleDown />}</span>
+                        > */}
+{/*  <span>{servicesOpen ? <FaAngleUp /> : <FaAngleDown />}</span>
                         </div>
                         {servicesOpen && (
                             <ul className="absolute top-full left-0 mt-2 bg-white border rounded shadow-lg w-56 z-50 text-base py-1">
@@ -143,156 +269,4 @@ const Navbar = () => {
                                     </Link>
                                 </li>
                             </ul>
-                        )}
-                    </li>
-
-                    <li>
-                        <Link to="/contact" className="hover:text-gray-600 transition-colors">Contact</Link>
-                    </li>
-
-                    <li>
-                        <Button
-                            style={{ backgroundColor: 'black', textTransform: 'none' }}
-                            variant="contained"
-                            className="hover:bg-gray-800 transition-colors"
-                            onClick={() => navigate('/consultation')}
-                        >
-                            Get a Free Consultation
-                        </Button>
-                    </li>
-                </ul>
-
-                {/* Hamburger for Mobile */}
-                <div
-                    className="md:hidden text-3xl cursor-pointer hamburger-icon"
-                    onClick={(e) => {
-                        e.stopPropagation();
-                        setMenuOpen(!menuOpen);
-                    }}
-                >
-                    ☰
-                </div>
-
-                {/* Mobile Nav */}
-                {menuOpen && (
-                    <div
-                        className="absolute top-full left-0 w-full bg-white shadow-md md:hidden py-4 px-6"
-                        ref={mobileMenuRef}
-                    >
-                        <ul className="flex flex-col gap-5 text-lg poppins-semibold">
-                            <li>
-                                <Link to="/" onClick={() => handleMobileItemClick('/')} className="hover:text-gray-600 block">
-                                    Home
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/about" onClick={() => handleMobileItemClick('/about')} className="hover:text-gray-600 block">
-                                    About
-                                </Link>
-                            </li>
-
-                            {/* Mobile Services Dropdown */}
-                            <li>
-                                <div
-                                    className="flex justify-between items-center hover:text-gray-600 cursor-pointer"
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        setMobileServicesOpen(!mobileServicesOpen);
-                                        if (!mobileServicesOpen) setMobileWebOpen(false);
-                                    }}
-                                >
-                                    Services <span>{mobileServicesOpen ? <FaAngleUp /> : <FaAngleDown />}</span>
-                                </div>
-                                {mobileServicesOpen && (
-                                    <ul className="pl-4 mt-2 space-y-2 text-base">
-                                        <li>
-                                            <div
-                                                className="flex justify-between items-center hover:text-gray-600 cursor-pointer"
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    setMobileWebOpen(!mobileWebOpen);
-                                                }}
-                                            >
-                                                Website Development <span>{mobileWebOpen ? <FaAngleUp /> : <FaAngleDown />}</span>
-                                            </div>
-                                            {mobileWebOpen && (
-                                                <ul className="pl-4 mt-2 space-y-2">
-                                                    <li>
-                                                        <Link
-                                                            to="/services/e-commerce"
-                                                            className="hover:text-gray-600 block py-1"
-                                                            onClick={() => handleMobileItemClick('/services/e-commerce')}
-                                                        >
-                                                            E-Commerce Sites
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link
-                                                            to="/services/portfolio"
-                                                            className="hover:text-gray-600 block py-1"
-                                                            onClick={() => handleMobileItemClick('/services/portfolio')}
-                                                        >
-                                                            Portfolio Sites
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link
-                                                            to="/services/business"
-                                                            className="hover:text-gray-600 block py-1"
-                                                            onClick={() => handleMobileItemClick('/services/business')}
-                                                        >
-                                                            Business Websites
-                                                        </Link>
-                                                    </li>
-                                                </ul>
-                                            )}
-                                        </li>
-                                        <li>
-                                            <Link
-                                                to="/services/ui-ux"
-                                                className="hover:text-gray-600 block py-1"
-                                                onClick={() => handleMobileItemClick('/services/ui-ux')}
-                                            >
-                                                UI/UX Design
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link
-                                                to="/services/seo"
-                                                className="hover:text-gray-600 block py-1"
-                                                onClick={() => handleMobileItemClick('/services/seo')}
-                                            >
-                                                SEO Optimization
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                )}
-                            </li>
-
-                            <li>
-                                <Link to="/contact" onClick={() => handleMobileItemClick('/contact')} className="hover:text-gray-600 block">
-                                    Contact
-                                </Link>
-                            </li>
-                            <li>
-                                <Button
-                                    style={{ backgroundColor: 'black', textTransform: 'none' }}
-                                    variant="contained"
-                                    fullWidth
-                                    className="hover:bg-gray-800 transition-colors mt-2"
-                                    onClick={() => {
-                                        handleMobileItemClick('/consultation');
-                                    }}
-                                >
-                                    Free Consultation
-                                </Button>
-                            </li>
-                        </ul>
-                    </div>
-                )}
-            </div>
-       </nav>
-    );
-};
-
-export default Navbar;
+                        )} */}
