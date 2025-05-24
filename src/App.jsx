@@ -2,11 +2,11 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home/Home';
-import Services from './components/Services';
-import About from './components/About';
-import Testimonial from './components/Testimonial';
+import Services from './Pages/Services';
+import About from './Pages/About';
+import Testimonial from './components/Home/Testimonial';
 import Footer from './components/Footer';
-import Contact from './components/Contact';
+import Contact from './Pages/Contact';
 
 
 const App = () => {
@@ -27,7 +27,6 @@ const App = () => {
 
         {/* Add other routes here as needed */}
       </Routes>
-      <Testimonial/>
       <Footer />
     </BrowserRouter>
   );
